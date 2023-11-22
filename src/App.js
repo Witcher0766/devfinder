@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
+import Profile from './component/Profile';
+import {ToastContainer} from 'react-toastify';
+import { useContext } from 'react';
+import ThemeContext from './context/themeContext';
 
 function App() {
+ 
+
+  const {theme} = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <>
+    <BrowserRouter>
+     <ToastContainer/>
+    <section data-theme={theme}> 
+   <div className='main-container'>
+    <Profile/>
     </div>
+   </section>
+    </BrowserRouter>
+    </>
   );
 }
 
