@@ -21,7 +21,6 @@
     --color-whitesmoke: rgba(169, 163, 163, 0.162);
     --color-shadows: rgba(241, 234, 234, 0.267);
 
-
     --background: var(--color-dark);
     --foreground: var(--color-white);
     --animate: var(--color-whitesmoke);

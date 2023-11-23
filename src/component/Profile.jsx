@@ -25,20 +25,28 @@ const Profile = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
-      const data = await response.json();
-
+      const response1 = await fetch(`https://api.github.com/users/Witcher0766`);
       if (response.ok) {
+        const data = await response.json();
         setUserData(data);
-      } else {
-        toast.error('Error fetching data:', data.message);
+      } 
+      else if (response.status === 404) {
+        const data1 = await response1.json();
+        setUserData(data1);
+        alert("Please enter valid username")
+      }
+      else {
+        const data1 = await response1.json();
+        setUserData(data1);
+        alert("Please enter valid username")
       }
     } catch (error) {
-      toast.error('Error:', error);
+      console.log('Error:', error);
     }
   };
-  // console.log(userData);
+  console.log(userData);
   const {avatar_url, bio, created_at, followers, following,
-  location, public_repos, name, blog, html_url } = userData;
+  location, public_repos, name, blog, html_url, login } = userData;
 
 
   const toggleDarkMode = (checked) => {
@@ -88,7 +96,7 @@ const Profile = () => {
     <div className={styles["sub-box"]}>
     <div className={styles["avatar-div"]}>
     <h4>{name}</h4>
-    <p>{username}</p>
+    <p>{login}</p>
     <p>{bio}</p>
     </div>
     <p>{created_at}</p>
