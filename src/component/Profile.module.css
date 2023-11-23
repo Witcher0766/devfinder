@@ -43,7 +43,6 @@
     width: 60%;
     gap: 0.5rem;
     color: var(--foreground);
-    
 }
 
 .sub-div-2 input[type="search"] {
@@ -96,6 +95,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* border: 2px solid rebeccapurple; */
 }
 .sub-box p {
     color: var(--foreground);    
@@ -165,5 +165,68 @@
     color: var(--foreground);
     cursor: pointer;
     transition: all 0.3s;
+}
+
+
+@media screen and (max-width: 720px ) {
+
+    .container {
+        width: auto;
+        height: auto;
+    }
+
+    .main-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-box img {
+        width: 30%;
+        height: auto;
+        border-radius: 50%;
+    }
+    .box {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 663px) {
+
+    .box {
+        width: 90%;
+    }
+    .search {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 500px) {
+
+    .box {
+        width: 100%;
+    }
+    .main-box {
+        padding: 10px 20px 10px 20px;
+    }
+}
+
+@media screen and (max-width: 400px ) {
+
+    .sub-box {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .sub-div-2 {
+        padding: 10px;
+    }
+    .search {
+        width: 100%;
+    }
 }
 
